@@ -1,0 +1,8 @@
+# 备份文件
+index.backup-*.html
+
+# Claude 本地配置
+.claude/
+
+# macOS
+.DS_Store

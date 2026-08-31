@@ -99,6 +99,56 @@
     font-size:13px;color:#8D99B6;
   }
 
+  /* ---------- 用工合规问答 ---------- */
+  .qa-box{
+    max-width:1120px;margin:24px auto 0;padding:0 6vw;
+  }
+  .qa-wrap{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .qa-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .qa-head h5{font-family:var(--font-display);font-size:18px;color:var(--primary-2);margin:0;}
+  .qa-head .qa-sub{font-size:12.5px;color:var(--ink-soft);}
+  .qa-input-row{display:flex;gap:10px;margin-top:16px;align-items:stretch;}
+  .qa-input-row input{
+    flex:1;font-size:15px;color:var(--ink);border:1.5px solid var(--line);border-radius:10px;
+    padding:12px 16px;background:var(--surface);outline:none;font-family:var(--font-body);
+  }
+  .qa-input-row input:focus{border-color:var(--accent);}
+  .qa-input-row button{
+    background:var(--accent);color:#fff;border:none;border-radius:10px;padding:0 22px;
+    font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:var(--font-body);
+  }
+  .qa-input-row button:hover{background:var(--accent-dark);}
+  .qa-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+  .qa-chip{
+    font-size:12.5px;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;
+    padding:6px 12px;cursor:pointer;background:var(--surface);transition:all .15s;
+  }
+  .qa-chip:hover{color:var(--primary);border-color:var(--accent);}
+  .qa-result{margin-top:18px;}
+  .qa-card{
+    border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;
+    background:#FBFCFE;
+  }
+  .qa-card-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  .qa-topic{font-size:14px;font-weight:700;color:var(--primary);}
+  .qa-verdict{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px;}
+  .qa-verdict.ok{background:rgba(31,111,101,.12);color:var(--teal);}
+  .qa-verdict.over{background:rgba(192,57,43,.12);color:#c0392b;}
+  .qa-verdict.under{background:rgba(192,57,43,.12);color:#c0392b;}
+  .qa-verdict.review{background:rgba(184,134,59,.15);color:var(--accent-dark);}
+  .qa-verdict.ref{background:rgba(138,153,182,.15);color:#6B7794;}
+  .qa-answer{font-size:14px;color:var(--ink);line-height:1.7;}
+  .qa-basis{font-size:12px;color:var(--ink-soft);margin-top:8px;}
+  .qa-src{margin-top:8px;}
+  .qa-src a{font-size:12px;color:var(--accent-dark);text-decoration:none;border-bottom:1px dashed var(--accent);}
+  .qa-src a:hover{color:var(--accent);}
+  .qa-empty{font-size:13.5px;color:var(--ink-soft);padding:14px 4px;line-height:1.7;}
+  .qa-empty strong{color:var(--primary);}
+  .qa-disclaimer{font-size:11px;color:#8D99B6;margin-top:14px;line-height:1.6;}
+
   /* ---------- Layout shells ---------- */
   .view{display:none;}
   .view.active{display:block;}
@@ -490,6 +540,7 @@
       <p class="overview" id="detailOverview"></p>
     </div>
   </div>
+  <div class="qa-box" id="qaBox"></div>
   <div class="category-nav" id="categoryNav"></div>
   <div id="calcSection"></div>
   <div class="category-grid" id="categoryGrid"></div>
@@ -520,7 +571,7 @@ const REGIONS = [
   {
     key: "af",
     label: "非洲",
-    countries: ["ng","za"]
+    countries: ["ng","za","ao"]
   },
   {
     key: "latam",
@@ -2201,6 +2252,75 @@ const DATA = {
       ]},
     }
   },
+  ao: {
+    name:"安哥拉", flag:"🇦🇴", code:"AO", region:"非洲",
+    updated:"2026-08 已核实来源", tagline:"安哥拉化配额外籍≤30%，增值税14%，最低工资100,000宽扎/月，企业所得税25%（金融石油35%）",
+    overview:"安哥拉劳动关系核心法律依据是2023年12月27日第12/23号《一般劳动法》（Lei Geral do Trabalho，2024年3月26日生效，取代原第7/15号法律），由劳动与社会保障部（MAPTSS）及劳动监察总局执行。外资准入依据《私人投资法》（第10/18号，经第10/21号修订），由私人投资与出口促进局（AIPEX）一站式办理。税务由安哥拉税务总局（AGT）征管，社保由INSS管理。以下条目附官方与专业机构来源，核实于2026年8月。",
+    categories:{
+      marketentry:{title:"市场准入与外资审查", items:[
+        {text:"安哥拉《私人投资法》现行版本为2018年6月26日第10/18号法律，经2021年4月22日第10/21号法律修订，实施细则为第250/18号总统令（经第271/21号修订）。该法对国内外投资者统一适用、覆盖任何金额的私人投资，外资受让安哥拉企业股权亦属私人投资行为，须在主管机构登记备案。", source:"https://www.state.gov/reports/2025-investment-climate-statements/angola", sourceLabel:"美国国务院（官网）· 2025投资环境报告"},
+        {text:"外资持股上限集中于石油天然气领域（外资持股上限49%）及海运（航运）行业；军事与安全、中央银行活动等原则上不对外资开放。2021年修订法取消了电力水务、旅游、运输物流、建筑、传媒、电信与IT等战略行业须与本地伙伴合作（本地持股≥35%）的强制要求，投资者可自行决定股权结构。", source:"https://www.state.gov/reports/2025-investment-climate-statements/angola", sourceLabel:"美国国务院（官网）· 2025投资环境报告"},
+        {text:"投资额超过1000万美元的项目须签订投资合同，经部长会议批准并由总统签署；AIPEX（私人投资与出口促进局）维护\"单一投资窗口\"（Janela Única do Investimento）作为投资一站式平台。2021年修订法取消了原先外资100万美元、内资50万美元的激励资格门槛。", source:"https://2021-2025.state.gov/reports/2022-investment-climate-statements/angola", sourceLabel:"美国国务院（官网）· 2022投资环境报告"}
+      ]},
+      companysetup:{title:"公司设立", items:[
+        {text:"安哥拉公司设立依据2004年2月13日第1/04号《商业公司法》。常见类型：有限责任配额公司（Sociedade por Quotas/LDA，适合中小型投资）、股份公司（Sociedade Anónima/SA，适合大型投资且股份可转让），另有分公司（Sucursal，由母公司担责）与代表处（仅限市场调研、推广等非商业活动）。", source:"https://legalmca.com/en_GB/2020/04/15/how-to-open-a-company-in-angola", sourceLabel:"Legal MCA（非官方，援引第1/04号法律口径）· 公司设立指南"},
+        {text:"LDA无强制最低资本（实务通常以1000美元或等值宽扎起步，配额面值由章程自由确定），须至少2名股东，亦允许单一自然人设立一人公司；SA最低资本为相当于2万美元的宽扎，须至少5名股东（一方为公共实体时可为2名），成立时至少实缴30%。世界银行《营商环境报告》统计设立公司约8项程序、平均36天。", source:"https://www.lloydsbanktrade.com/en/market-potential/angola/incorporation", sourceLabel:"Lloyds Bank Trade（非官方，援引第1/04号法律及《营商环境报告》口径）· 公司类型与程序"},
+        {text:"外资在多数行业可100%持股：2021年修订法取消电力水务、旅游、运输物流、建筑、传媒、电信与IT等行业须引入持股≥35%本地伙伴的强制要求，投资者可自行决定股权结构。投资额超1000万美元须经部长会议批准并由总统签署合同，AIPEX提供一站式投资登记。", source:"https://2021-2025.state.gov/reports/2022-investment-climate-statements/angola", sourceLabel:"美国国务院（官网）· 2022投资环境报告"}
+      ]},
+      workvisa:{title:"签证与在留资格", items:[
+        {text:"工作签证依安哥拉《外国公民法律制度》（第13/19号法律）签发，允许持有人入境后为国家或雇主临时从事有报酬职业。签证须自批准之日起60天内使用，可多次入境，停留至劳动合同期满。申请材料含劳动合同、无犯罪记录、体检证明等，经驻外使领馆或移民与外国人服务局（SME）门户sme.gov.ao办理。", source:"https://consuladogeral-angola.pt/servicos/visto/visto-de-trabalho", sourceLabel:"安哥拉驻里斯本总领事馆（官网）· 工作签证"},
+        {text:"安哥拉实行\"安哥拉化\"本地用工配额：2025年2月18日《总统令第49/25号》规定，非居民外籍雇员不得超过企业员工总数的30%，其余70%须为安哥拉籍员工（在安外籍居民计入\"本地\"70%口径），违规依《总统令第50/25号》处罚。外籍雇佣合同须在就业中心登记，缴纳相当于合同月薪5%的登记费。", source:"https://www.ey.com/pt_ao/technical/tax-alerts/exercicio-da-actividade-profissional-do-trabalhador-estrangeiro-nao-residente", sourceLabel:"EY安哥拉（非官方，援引Decreto Presidencial n.º 49/25口径）· 本地用工配额"},
+        {text:"投资签证（Visto de Investidor）依第13/19号法律签发给已按《私人投资法》登记的投资项目的外国投资人、代表或代理人，允许多次入境、单次停留最长2年，期满可延展。持投资签证在安连续居住满3年、经私人投资主管部门确认项目仍有效后，可申请临时居留许可。", source:"https://www.dlapiperafrica.com/pt/angola/insights/2019/visas-for-foreign-citizens.html", sourceLabel:"DLA Piper Africa/ADCA（非官方，援引第13/19号法律口径）· 投资签证"}
+      ]},
+      consumptiontax:{title:"税收全景", items:[
+        {text:"增值税（IVA，Imposto sobre o Valor Acrescentado）标准税率14%（截至2026年6月仍为14%，未调整），自2019年10月1日施行、取代原消费税。优惠税率：特定食品与农产品5%、酒店餐饮及简化制7%、卡宾达省部分交易2%/1%，出口与国际客运0%。2026年预算将工业设备进口/转让增值税下调至5%，移动支付交易免征增值税。", source:"https://taxsummaries.pwc.com/angola/corporate/other-taxes", sourceLabel:"PwC安哥拉（非官方）· 增值税税率"},
+        {text:"企业所得税（工业税Imposto Industrial）标准税率25%，对居民企业全球所得、非居民常设机构在安所得征税。2026年起，金融机构、保险公司、电信运营商及石油行业部分企业适用35%的更高税率（25%继续适用于其他纳税人）。由安哥拉税务总局（AGT，agt.minfin.gov.ao）征管。", source:"https://taxsummaries.pwc.com/angola/corporate/taxes-on-corporate-income", sourceLabel:"PwC安哥拉（非官方，35%税率见BDO 2026汇总）· 企业所得税"},
+        {text:"预提税：股息、利息、特许权使用费等投资所得按IIT一般15%预提（部分收入10%），对非居民为最终税；支付服务费预提6.5%。关税对进口从价征收，税率2%–55%。双边协定：安哥拉与中国、葡萄牙、阿联酋已签署并生效避免双重征税协定；与瑞士、佛得角、毛里求斯、卢旺达等已签未生效。", source:"https://taxsummaries.pwc.com/angola/individual/foreign-tax-relief-and-tax-treaties", sourceLabel:"PwC安哥拉（非官方）· 预提税/关税/税收协定"}
+      ]},
+      contract:{title:"合同类型", items:[
+        {text:"雇佣合同分无固定期限与固定期限两类。无固定期限合同默认试用期60天，管理类岗位经双方书面约定可延长至180天；固定期限合同试用期上限统一为30天（新法第12/23号调整，不再按雇员资历分级）。试用期满继续留用即视为转正。", source:"https://www.eversheds-sutherland.com/en/portugal/insights/newsletter-angola-new-general-labour-law", sourceLabel:"Eversheds Sutherland（非官方，援引Lei 12/23口径）· 合同类型与试用期"}
+      ]},
+      employment:{title:"用工方式", items:[
+        {text:"直接雇佣为主流；外籍员工须持有效工作签证并遵守\"安哥拉化\"配额（外籍≤30%）。固定期限、兼职、轮班等用工形式受第12/23号《一般劳动法》规范，外籍雇佣合同须在就业中心登记。", source:"https://lex.ao/docs/assembleia-nacional/2023/lei-n-o-12-23-de-27-de-dezembro", sourceLabel:"lex.ao（非官方，援引Lei 12/23原文）· 用工方式"}
+      ]},
+      probation:{title:"试用期", items:[
+        {text:"无固定期限合同默认试用期60天；管理类岗位经双方书面约定可延长至180天；固定期限合同试用期上限统一为30天。试用期内若不胜任，雇主可终止合同且无需通知期或遣散费。", source:"https://www.eversheds-sutherland.com/en/portugal/insights/newsletter-angola-new-general-labour-law", sourceLabel:"Eversheds Sutherland（非官方，援引Lei 12/23口径）· 试用期"}
+      ]},
+      workinghours:{title:"工作时间", items:[
+        {text:"依据新《一般劳动法》第12/23号第148条，正常工时上限为每日8小时、每周44小时。每日须安排不少于1小时、不超过2小时的休息用餐间隔，每周至少24小时连续休息（优先周日）。轮班等特殊工种可在法定条件下弹性安排，超出年工时折算的工时计为加班。", source:"https://lex.ao/docs/assembleia-nacional/2023/lei-n-o-12-23-de-27-de-dezembro", sourceLabel:"lex.ao（非官方，援引Lei 12/23第148条原文）· 工时上限"}
+      ]},
+      overtime:{title:"加班标准", items:[
+        {text:"加班受严格上限约束：每日最多2小时、每月40小时、每年200小时。加班费按正常时薪加成支付：每月前30小时加付50%，超过30小时的部分加付75%。雇主须逐日登记每位工人的加班起止时间与事由，未登记加班可被追责。", source:"https://africa-hr.com/blog/overtime-laws-in-africa", sourceLabel:"Africa HR Solutions（非官方，援引Lei Geral do Trabalho口径）· 加班费率与上限"}
+      ]},
+      wage:{title:"最低工资", items:[
+        {text:"自2025年9月16日起，全国一般最低工资上调至100,000宽扎/月（约110美元）；微型企业和初创企业适用50,000宽扎/月。此前为2024年9月的70,000宽扎。中等与大型企业若尚未达到新标准，最迟须于2026年9月/2027年分步到位，企业可向MAPTSS申请最长24个月豁免。", source:"https://wageindicator.org/pt-ao/trabalho-em-angola/salario-minimo", sourceLabel:"WageIndicator（非官方，援引Decreto Presidencial 152/24）· 最低工资分档"}
+      ]},
+      leaveannual:{title:"年假", items:[
+        {text:"员工每年享22个工作日带薪年假，按公历年于1月1日就上一年度工作取得；入职首年按每满1个月累积2天计算，且须连续工作满6个月后方可休假。休假前雇主须支付相当于月基本工资50%的度假津贴（subsídio de férias），劳动关系存续期间不得以现金替代年假。", source:"https://www.remotepass.com/country/angola/benefits-leave", sourceLabel:"RemotePass（非官方，援引Lei 12/23口径）· 年假与度假津贴"}
+      ]},
+      leavematernity:{title:"产假", items:[
+        {text:"女职工享3个月（12周）带薪产假，通常于预产期前4周开始（多胎前8周），产后至少9周；新法第12/23号允许延长至4个月。高风险妊娠可额外享受最长180天带薪假。津贴由社保支付，雇主先行垫付后向INSS报销；陪产假为1天带薪加7天无薪。", source:"https://vacationtracker.io/leave-laws/africa/angola", sourceLabel:"Vacation Tracker（非官方，援引Lei 12/23口径）· 产假与陪产假"}
+      ]},
+      termination:{title:"解雇标准", items:[
+        {text:"个人解雇须提前30天书面通知（固定期限合同15个工作日），集体裁员60天并须通知劳动监察总局。解雇须具备客观理由并遵守正当程序，违法解雇按45天工资/年计赔。", source:"https://wageindicator.org/pt-ao/trabalho-em-angola/lei-do-trabalho/contratos-e-demissoes/aviso-previo-e-indemnizacao-por-despedimento", sourceLabel:"WageIndicator（非官方，援引Lei 12/23第289、295条）· 通知期"}
+      ]},
+      severance:{title:"遣散费/离职金", items:[
+        {text:"客观原因解雇（非纪律性）的遣散费按第12/23号第308/310条：前5年每年1个月基本工资，第6年起每年加付50%基本工资。违法解雇另按45天工资/年计赔。纪律性即时解雇不支付遣散费。", source:"https://wageindicator.org/pt-ao/trabalho-em-angola/lei-do-trabalho/contratos-e-demissoes/aviso-previo-e-indemnizacao-por-despedimento", sourceLabel:"WageIndicator（非官方，援引Lei 12/23第308、310条）· 遣散费"}
+      ]},
+      socialinsurance:{title:"社保（INSS）", items:[
+        {text:"社保由INSS（Instituto Nacional de Segurança Social）管理：现行费率为雇主8%+雇员3%=11%（Decreto Presidencial 227/18）；2025年已达成拟上调至雇主10%+雇员5%=15%的共识，但截至2026年仍未生效。缴费基数为雇员全部现金及实物报酬（度假津贴等法定项目除外），无缴费基数上限。", source:"https://www.remotepass.com/country/angola/taxes", sourceLabel:"RemotePass（非官方，援引Decreto Presidencial 227/18口径）· 社保费率"},
+        {text:"工伤保险为强制、雇主缴纳、按风险浮动（典型0.5%–4%，Decreto 53/05）。养老金、伤残、疾病、生育等由INSS覆盖；退休返岗雇员按8%缴纳。", source:"https://www.remotepass.com/country/angola/taxes", sourceLabel:"RemotePass（非官方）· 工伤保险与INSS"}
+      ]},
+      tax:{title:"税率（个税IRT）", items:[
+        {text:"个人所得税（IRT，Imposto sobre o Rendimento do Trabalho）对雇佣所得按月累进预扣（Grupo A）。2026年月薪税率：≤150,000宽扎免税；150,001–200,000为12,500+16%；200,001–300,000为31,250+18%；300,001–500,000为49,250+19%；500,001–1,000,000为87,250+20%；超10,000,000为2,342,250+25%。由雇主代扣代缴给AGT。", source:"https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income", sourceLabel:"PwC安哥拉（非官方）· 2026个税IRT月薪税率表"},
+        {text:"2026年6月25日国民议会批准新《个人所得税法典》（IRPS），将取代现行分类税制、采用统一课税模式，预计2027年1月1日生效。企业按25%缴企业所得税（金融/保险/电信/石油部分35%），员工薪资成本含INSS 8%雇主缴费及工伤保险。", source:"https://kpmg.com/xx/en/our-insights/gms-flash-alert/2026/flash-alert-2026-183.html", sourceLabel:"毕马威KPMG（非官方）· 新个税法典IRPS"}
+      ]},
+      angolanizacao:{title:"安哥拉化/本地用工配额", items:[
+        {text:"安哥拉化配额（2025年2月18日《总统令第49/25号》）：非居民外籍雇员不得超过企业员工总数的30%，其余70%须为安哥拉籍员工（在安外籍居民计入\"本地\"70%口径），违规依《总统令第50/25号》处罚。", source:"https://www.ey.com/pt_ao/technical/tax-alerts/exercicio-da-actividade-profissional-do-trabalhador-estrangeiro-nao-residente", sourceLabel:"EY安哥拉（非官方，援引Decreto Presidencial n.º 49/25口径）· 本地用工配额"},
+        {text:"外籍雇佣合同须在就业中心登记，并缴纳相当于合同月薪5%的登记费；本地成分要求另涉及石油天然气行业（外资≤49%、本地成分强制）。", source:"https://www.state.gov/reports/2025-investment-climate-statements/angola", sourceLabel:"美国国务院（官网）· 本地成分与外籍用工"}
+      ]},
+    }
+  },
   hu: {
     name:"匈牙利", flag:"🇭🇺", code:"HU", region:"欧洲",
     updated:"2026-08 已核实官方来源", tagline:"企业所得税9%为欧盟最低，但增值税27%为欧盟最高，Kft最低资本300万福林1天注册",
@@ -2371,6 +2491,7 @@ const CATEGORY_ORDER = [
   ["consumptiontax","消费税与其他税种"],
   ["qatarization","本土化/卡塔尔化"],
   ["omanisation","本土化/Omanisation"],
+  ["angolanizacao","安哥拉化/本地用工配额"],
   ["localcontent","本土化/本地成分"],
   ["bbbee","B-BBEE评级"],
   ["ptu","利润分享(PTU)"]
@@ -5500,6 +5621,140 @@ function zaCalcFormatSalary(){
 }
 function zaCalcInit(){ zaCalcState = { city:"johannesburg", salary:25000, compare:false }; zaCalcUpdate(); }
 
+/* =============== 安哥拉用工成本测算工具 =============== */
+const AO_CALC_CITIES = {
+  luanda: { name:"罗安达", emoji:"🌆", minWage:100000 },
+  benguela: { name:"本格拉", emoji:"🌊", minWage:100000 },
+  lobito: { name:"洛比托", emoji:"⚓", minWage:100000 },
+};
+const AO_CALC = {
+  inssEr:0.08, inssEe:0.03, // 现行INSS 8%+3%（15%上调未生效）
+  minWageMicro:50000, // 微型企业/初创 5万宽扎
+};
+
+let aoCalcState = { city:"luanda", salary:150000, compare:false };
+
+function aoFmt(n){ return Math.round(n).toLocaleString("en-US")+" Kz"; }
+function aoFmtRaw(n){ return Math.round(n).toLocaleString("en-US"); }
+function aoParseSalary(s){ return parseInt(String(s).replace(/[^0-9]/g,""))||0; }
+
+function aoIrtMonthly(salary){
+  // 2026年安哥拉个税IRT（Grupo A）月薪累进，免征额150,000 Kz
+  const bands = [[150000,0,0],[200000,0.16,12500],[300000,0.18,31250],[500000,0.19,49250],[1000000,0.20,87250],[1500000,0.21,187250],[2000000,0.22,292250],[2500000,0.23,402250],[5000000,0.24,517250],[10000000,0.245,1117250],[Infinity,0.25,2342250]];
+  for(let i=0;i<bands.length;i++){
+    const limit = bands[i][0], rate = bands[i][1], base = bands[i][2];
+    if(salary <= limit){
+      return base + (salary - (i===0?0:bands[i-1][0])) * rate;
+    }
+  }
+  return 0;
+}
+
+function aoCalcCompute(salary, cityKey){
+  const city = AO_CALC_CITIES[cityKey];
+  const inssEr = salary * AO_CALC.inssEr;
+  const totalEmployer = salary + inssEr;
+  const multiplier = salary > 0 ? totalEmployer / salary : 0;
+  const inssEe = salary * AO_CALC.inssEe;
+  const irt = aoIrtMonthly(salary);
+  const netSalary = salary - inssEe - irt;
+  return { salary, inssEr, totalEmployer, multiplier, inssEe, irt, netSalary, city };
+}
+
+function aoCalcRender(){
+  return `<div class="jp-calc-section" id="aoCalcSection">
+    <div class="jp-calc-wrap">
+      <div class="jp-calc-head">
+        <span class="tab-label" style="background:var(--accent)">用工工具</span>
+        <h5>人工成本测算</h5>
+        <p class="jp-calc-sub">输入员工月薪，自动计算雇主全部用工成本（INSS 8%，无封顶）</p>
+      </div>
+      <div class="jp-calc-body">
+        <div class="jp-calc-city-tabs" id="aoCalcTabs">
+          <div class="jp-calc-city-tab active" data-city="luanda" onclick="aoCalcSelectCity('luanda')">罗安达 🌆</div>
+          <div class="jp-calc-city-tab" data-city="benguela" onclick="aoCalcSelectCity('benguela')">本格拉 🌊</div>
+          <div class="jp-calc-city-tab" data-city="lobito" onclick="aoCalcSelectCity('lobito')">洛比托 ⚓</div>
+          <div class="jp-calc-city-tab jp-calc-compare" data-city="compare" onclick="aoCalcSelectCompare()">横向对比</div>
+        </div>
+        <label class="jp-calc-input-label" for="aoCalcSalary">员工月薪（税前，宽扎Kz）</label>
+        <div class="jp-calc-input-row">
+          <input type="text" inputmode="numeric" class="jp-calc-salary-input" id="aoCalcSalary" value="150,000" oninput="aoCalcOnSalaryInput(this.value)" onblur="aoCalcFormatSalary()">
+          <span class="jp-calc-currency">宽扎</span>
+        </div>
+        <div id="aoCalcMinWage"></div>
+        <div id="aoCalcResult"></div>
+      </div>
+    </div>
+    <p class="jp-calc-disclaimer">※ 安哥拉雇主强制缴费：INSS社保8%（雇员另缴3%，合计11%，现行Decreto Presidencial 227/18；2025年拟上调至10%+5%=15%尚未生效）；缴费基数无封顶（全额工资计提）。工伤保险为强制、雇主缴纳、按风险浮动（典型0.5%–4%）。雇员扣缴：INSS 3% + 个税IRT（月薪累进0%-25%，≤150,000 Kz免税）。全国统一最低工资100,000 Kz/月（微型企业/初创50,000 Kz）。外籍须另守\"安哥拉化\"配额（外籍≤30%）并缴月薪5%登记费。数据仅供参考，正式决策请咨询安哥拉薪酬/税务专业顾问。</p>
+  </div>`;
+}
+
+function aoCalcUpdate(){
+  document.querySelectorAll("#aoCalcTabs .jp-calc-city-tab").forEach(function(tab){
+    var c = tab.dataset.city;
+    if(aoCalcState.compare){ tab.classList.toggle("active", c === "compare"); }
+    else { tab.classList.toggle("active", c === aoCalcState.city); }
+  });
+  var mwEl = document.getElementById("aoCalcMinWage");
+  var resEl = document.getElementById("aoCalcResult");
+  if(!mwEl || !resEl) return;
+  if(aoCalcState.compare){
+    mwEl.innerHTML = '<div class="jp-calc-min-hint">以下为三城市同一薪资下的雇主成本对比（费率全国统一）</div>';
+    resEl.innerHTML = aoCalcCompareHTML();
+  } else {
+    var r = aoCalcCompute(aoCalcState.salary, aoCalcState.city);
+    var below = aoCalcState.salary < r.city.minWage;
+    mwEl.innerHTML = below
+      ? '<div class="jp-calc-min-warn">⚠ 低于全国一般最低工资（100,000 Kz/月）</div>'
+      : '<div class="jp-calc-min-hint">✓ 高于全国一般最低工资（100,000 Kz/月）</div>';
+    resEl.innerHTML = aoCalcBreakdownHTML(r);
+  }
+}
+
+function aoCalcBreakdownHTML(r){
+  return '<div class="jp-calc-result">'
+    + '<div class="jp-calc-result-title">雇主月度成本明细 · '+r.city.name+'</div>'
+    + '<div class="jp-calc-breakdown">'
+    + '<div class="jp-calc-br-row"><span class="jp-calc-br-label">员工工资</span><span class="jp-calc-br-value">'+aoFmt(r.salary)+'</span></div>'
+    + '<div class="jp-calc-br-row"><span class="jp-calc-br-label">INSS社保（雇主）<span class="jp-calc-br-rate">8%</span></span><span class="jp-calc-br-value">'+aoFmt(r.inssEr)+'</span></div>'
+    + '<div class="jp-calc-total-row"><span class="jp-calc-total-label">雇主月度总成本</span><span class="jp-calc-total-value">'+aoFmt(r.totalEmployer)+'</span></div>'
+    + '<div class="jp-calc-mult">成本系数 '+r.multiplier.toFixed(3)+' × 月薪</div>'
+    + '</div>'
+    + '<div class="jp-calc-caps" style="margin-top:16px;background:#F0F4F0"><strong>员工侧扣缴</strong><br>INSS 3% '+aoFmt(r.inssEe)+' + IRT个税 '+aoFmt(r.irt)+'<br>员工实发 ≈ '+aoFmt(r.netSalary)+'</div>'
+    + '<div class="jp-calc-caps"><strong>说明</strong><br>工伤保险按风险浮动另计（典型0.5%–4%）；外籍员工另缴月薪5%登记费并受30%配额约束。INSS缴费无封顶。</div>'
+    + '</div>';
+}
+
+function aoCalcCompareHTML(){
+  var salary = aoCalcState.salary;
+  var results = Object.keys(AO_CALC_CITIES).map(function(k){ return aoCalcCompute(salary, k); });
+  var minTotal = Math.min.apply(null, results.map(function(r){ return r.totalEmployer; }));
+  var cards = results.map(function(r){
+    var isBest = r.totalEmployer === minTotal && salary > 0;
+    return '<div class="jp-calc-ccard'+(isBest?' best':'')+'">'
+      + '<div class="jp-calc-ccard-city">'+r.city.emoji+' '+r.city.name+(isBest?' · 最低':'')+'</div>'
+      + '<div class="jp-calc-ccard-cost">'+aoFmt(r.totalEmployer)+'</div>'
+      + '<div class="jp-calc-ccard-mult">'+r.multiplier.toFixed(3)+' ×</div>'
+      + '<div class="jp-calc-ccard-detail">'
+      + '<div class="dl"><span>员工实发</span><span>'+aoFmtRaw(r.netSalary)+'</span></div>'
+      + '<div class="dl"><span>年度总成本</span><span>'+aoFmtRaw(r.totalEmployer*12)+'</span></div>'
+      + '</div></div>';
+  }).join("");
+  return '<div class="jp-calc-compare-grid">'+cards+'</div>'
+    + '<div class="jp-calc-caps" style="margin-top:16px"><strong>对比说明</strong><br>'
+    + '安哥拉最低工资、INSS费率<b>全国统一</b>，三城市雇主成本<b>完全相同</b>（差异仅在生活成本：罗安达最高、本格拉/洛比托较低）。'
+    + '</div>';
+}
+
+function aoCalcSelectCity(city){ aoCalcState.city = city; aoCalcState.compare = false; aoCalcUpdate(); }
+function aoCalcSelectCompare(){ aoCalcState.compare = true; aoCalcUpdate(); }
+function aoCalcOnSalaryInput(val){ aoCalcState.salary = aoParseSalary(val); aoCalcUpdate(); }
+function aoCalcFormatSalary(){
+  var el = document.getElementById("aoCalcSalary");
+  if(el){ var v = aoParseSalary(el.value); el.value = v > 0 ? v.toLocaleString("en-US") : ""; }
+}
+function aoCalcInit(){ aoCalcState = { city:"luanda", salary:150000, compare:false }; aoCalcUpdate(); }
+
 /* =============== 匈牙利用工成本测算工具 =============== */
 const HU_CALC_CITIES = {
   budapest: { name:"布达佩斯", emoji:"🏰", minWage:322800 },
@@ -5840,6 +6095,198 @@ function filterCountries(q){
   if(q===""){ filterRegion(document.querySelector(".region-tab.active")?.dataset.key || "all"); }
 }
 
+/* =============== 用工合规问答规则库（日本试水版） =============== */
+const COMPLIANCE_RULES = [
+  {
+    country:"jp", topic:"外籍雇佣与签证",
+    strong:["外籍","外国人","中国人","配额","本地人","本地员工","签证","在留","工作签证"],
+    weak:["雇佣"],
+    answer:"日本对外籍雇佣<b>无「本地人:外籍」的固定配比限制</b>，不要求每雇一名中国人必须搭配雇佣若干日本本地人。限制在于「在留资格（工作签证）」：雇外国人须先取得对应签证——最常见为「技术·人文知识·国际业务」（需专业关联+薪酬不低于日本员工）或「经营管理」（在日设立公司，满足雇佣2名以上常勤雇员或资本金500万日元以上，或总资本3000万日元以上）。",
+    verdict:null,
+    basis:"《出入国管理及难民认定法》在留资格制度",
+    source:"https://www.moj.go.jp/isa/applications/status/index.html", sourceLabel:"出入国在留管理厅 · 在留资格一览"
+  },
+  {
+    country:"jp", topic:"EOR（名义雇主）委托用工",
+    strong:["EOR","eor","名义雇主","雇主记录","Employer of Record","PEO","劳务派遣","派遣","第三方","外包"],
+    answer:"日本法律<b>无针对「EOR/名义雇主」的专门明文规定</b>，厚生劳动省未发布 EOR 专门指引。主流实践（多家 EOR 服务商一致表述，属<b>非官方、有营销倾向</b>的说法）：EOR 模式下第三方作为<b>法定雇主</b>、依《劳动合同法》签订并履行雇主义务，在日本<b>属合法</b>；它与需许可的「劳务派遣」（劳动者派遣法）法律定性不同，不落入派遣许可要求。风险点：若 EOR 结构被认定实际构成「劳务派遣」，则须取得派遣许可并受期限/同工同酬等限制。<b>已设日本主体再用 EOR</b>：法律上 EOR 不因客户已有主体而当然违法，但若员工实际由你的日本主体指挥管理，可能被认定与主体存在事实雇佣关系或构成派遣、引发双重雇主/社保责任争议——此点为本工具基于法律结构的<b>推测，未经官方核实</b>，须咨询日本社会保険労務士。",
+    verdict:null,
+    basis:"《劳动合同法》《劳动者派遣法》法律结构分析（官方无 EOR 专门明文，来源为第三方服务商表述）",
+    source:"https://www.oysterhr.com/library/employers-of-record-in-japan", sourceLabel:"Oyster（非官方 EOR 服务商）· EOR 在日本的法律定性"
+  },
+  {
+    country:"jp", topic:"有期劳动合同上限",
+    strong:["有期合同","定期合同","合同期限","合同上限","固定期限","最长几年","签约几年"],
+    answer:"有期劳动合同原则上<b>上限3年</b>；具备专业知识的劳动者或60岁以上劳动者可订立<b>最长5年</b>的有期合同。连续更新、通算满5年者，可申请转换为无期雇佣（无期转换规则，劳动合同法第18条）。",
+    verdict:(n)=> (n!=null ? (n>3 ? {status:"over",note:`约定 ${n} 年超出普通上限3年，仅专业知识/60岁以上岗位可延至5年`} : {status:"ok",note:`${n} 年在3年上限内，合规`}) : null),
+    basis:"《劳动合同法》第18条、厚生劳动省通读",
+    source:"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html", sourceLabel:"厚生劳动省 · 劳动契约"
+  },
+  {
+    country:"jp", topic:"试用期",
+    strong:["试用期","试用","试用几个月"],
+    answer:"《劳动基准法》<b>未强制统一试用期时长</b>，实务中通常约定<b>3-6个月</b>并写入就业规则。但试用期内解雇仍须符合「客观合理理由」及「社会通念上相当」的解雇有效性标准，不能随意终止。",
+    verdict:(n)=> (n!=null ? (n>6 ? {status:"review",note:`约定 ${n} 个月偏长，超出实务常见3-6个月，虽无法定上限但须有合理理由`} : {status:"ok",note:`${n} 个月在实务常见3-6个月范围内`}) : null),
+    basis:"厚生劳动省劳动条件手册",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点"
+  },
+  {
+    country:"jp", topic:"标准工时",
+    strong:["工时","工作时间","每天几小时","每周几小时","8小时","40小时","法定工时"],
+    answer:"法定标准工时：<b>每日不超过8小时、每周不超过40小时</b>（常时雇佣不满10人的部分行业为每周44小时）。",
+    verdict:(n)=> (n!=null ? (n>8 ? {status:"over",note:`约定每日 ${n} 小时超8小时上限`} : {status:"ok",note:`${n} 小时/日未超8小时上限`}) : null),
+    basis:"《劳动基准法》第32条",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点"
+  },
+  {
+    country:"jp", topic:"加班时长上限",
+    strong:["加班","超时","残業","加班时长","加班上限","45小时","36协定","一个月加班"],
+    answer:"安排加班须先与工会/过半数代表签订「36协定」并向劳动基准监督署备案。加班时间原则上<b>每月≤45小时、每年≤360小时</b>；即使有「特别条款」，加班+休息日出勤合计仍须<b>单月<100小时、2-6个月平均≤80小时</b>，且全年超45小时的月份不得超过6个月。",
+    verdict:(n)=> (n!=null ? (n>45 ? {status:"over",note:`月加班 ${n} 小时超45小时上限，须检查是否落入「特别条款」及2-6月平均≤80小时`} : {status:"ok",note:`月加班 ${n} 小时在45小时上限内`}) : null),
+    basis:"《劳动基准法》第36条",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点"
+  },
+  {
+    country:"jp", topic:"加班工资费率",
+    strong:["加班费","加班工资","加班费率","25%","35%","深夜","休息日加班","割増"],
+    answer:"加班/休息日出勤/深夜劳动须支付割増賃金：普通加班<b>≥25%</b>，休息日出勤<b>≥35%</b>，深夜（22:00-5:00）<b>另加25%</b>；月加班超60小时部分统一提高至<b>≥50%</b>。",
+    verdict:null,
+    basis:"《劳动基准法》第37条",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点"
+  },
+  {
+    country:"jp", topic:"最低工资",
+    strong:["最低工资","最低时薪","最低薪资","最低工资标准","底薪","时薪"],
+    answer:"最低工资按47个都道府县分别制定。令和7年度（2025年度）全国加权平均为<b>每小时1,121日元</b>，东京都最高<b>1,226日元</b>，最低地区1,023日元。任何情况下工资不得低于最低标准。",
+    verdict:(n)=> (n!=null ? (n<1121 ? {status:"over",note:`时薪 ${n} 日元低于全国平均1,121日元，需核对当地都道府县标准`} : {status:"ok",note:`时薪 ${n} 日元不低于全国平均1,121日元`}) : null),
+    basis:"《最低工资法》第4条",
+    source:"https://www.mhlw.go.jp/content/11200000/001571192.pdf", sourceLabel:"厚生劳动省 · 令和7年度地域别最低工资一览"
+  },
+  {
+    country:"jp", topic:"带薪年假",
+    strong:["年假","年休","带薪假","带薪休假","年假几天","年休几天"],
+    answer:"入职满6个月且出勤率≥80%的劳动者享有<b>10天</b>带薪年假；此后每满1年递增，第6年6个月起达<b>最高20天/年</b>。授予10天以上者，雇主须确保年内实际使用满5天。",
+    verdict:(n)=> (n!=null ? (n>20 ? {status:"over",note:`约定 ${n} 天年假超法定上限20天（法定为上限，超出属企业福利）`} : {status:"ok",note:`${n} 天年假在法定范围内（10-20天）`}) : null),
+    basis:"《劳动基准法》第39条",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点"
+  },
+  {
+    country:"jp", topic:"病假与伤病津贴",
+    strong:["病假","伤病","伤假","病假津贴","伤病津贴","请假几天","病假工资"],
+    answer:"《劳动基准法》<b>未设法定带薪病假</b>，通常用年假或无薪假。参加健康保险者因病连续休3天以上，可申领「伤病津贴金」，标准约为<b>标准报酬日额的2/3</b>，<b>最长18个月</b>（入职连续参保满1年方有资格）。",
+    verdict:(n)=> (n!=null ? (n>18 ? {status:"over",note:`休假 ${n} 个月超伤病津贴最长18个月`} : {status:"ok",note:`${n} 个月在伤病津贴最长18个月内`}) : null),
+    basis:"《健康保险法》伤病津贴条款",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点/健康保险法"
+  },
+  {
+    country:"jp", topic:"解雇预告",
+    strong:["解雇","辞退","裁员","开除","解雇预告","提前多久","提前通知","30天"],
+    answer:"解雇须同时具备「客观合理理由」与「社会通念上相当性」，否则无效（解雇权滥用法理）。拟解雇须<b>提前30天以上预告</b>，或支付相当于30天以上平均工资的解雇预告手当。",
+    verdict:(n)=> (n!=null ? (n<30 ? {status:"over",note:`仅提前 ${n} 天预告，不足法定30天，须补足或支付解雇预告手当`} : {status:"ok",note:`提前 ${n} 天预告，满足30天要求`}) : null),
+    basis:"《劳动合同法》第16条、《劳动基准法》第20条",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点"
+  },
+  {
+    country:"jp", topic:"退职金",
+    strong:["退职金","遣散费","离职补偿","辞退补偿","补偿金","离职金"],
+    answer:"日本<b>无全国统一的法定退职金/遣散费制度</b>。退职金是否发放、计算方式完全取决于企业就业规则、劳动合同或劳资协议约定。",
+    verdict:null,
+    basis:"厚生劳动省劳动契约通读",
+    source:"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html", sourceLabel:"厚生劳动省 · 劳动契约"
+  },
+  {
+    country:"jp", topic:"休息时间",
+    strong:["休息","休息时间","午休","工间休息","休息多久"],
+    answer:"工作时间中途须依法安排休息：工作<b>超过6小时须休息45分钟以上</b>，<b>超过8小时须休息60分钟以上</b>。每周至少安排1天休息日。",
+    verdict:null,
+    basis:"《劳动基准法》第34、35条",
+    source:"https://www.mhlw.go.jp/content/11200000/001604439.pdf", sourceLabel:"厚生劳动省 · 劳动基准法要点"
+  }
+];
+
+let qaState = { country:"jp", q:"" };
+
+function qaRender(){
+  const hasRules = COMPLIANCE_RULES.some(r=>r.country===qaState.country);
+  if(!hasRules){
+    document.getElementById("qaBox").innerHTML = `<div class="qa-wrap">
+      <div class="qa-head"><h5>用工合规问答</h5><span class="qa-sub">当前国家规则库待补充</span></div>
+      <div class="qa-empty">该国合规规则库尚未建立。当前已上线国家：<strong>日本</strong>。可返回日本页面体验。</div>
+    </div>`;
+    return;
+  }
+  document.getElementById("qaBox").innerHTML = `<div class="qa-wrap">
+    <div class="qa-head"><h5>用工合规问答</h5><span class="qa-sub">描述你的用工场景，系统匹配对应政策</span></div>
+    <div class="qa-input-row">
+      <input type="text" id="qaInput" placeholder="例如：雇一个中国人要几个本地人？加班能超45小时吗？" onkeydown="if(event.key==='Enter'){qaAsk(this.value)}">
+      <button onclick="qaAsk(document.getElementById('qaInput').value)">查询</button>
+    </div>
+    <div class="qa-chips">
+      <span class="qa-chip" onclick="qaAsk('雇一个中国人要几个本地人')">雇中国人要几个本地人</span>
+      <span class="qa-chip" onclick="qaAsk('加班能超45小时吗')">加班能超45小时吗</span>
+      <span class="qa-chip" onclick="qaAsk('试用期能定6个月吗')">试用期能定6个月吗</span>
+      <span class="qa-chip" onclick="qaAsk('最低工资是多少')">最低工资多少</span>
+    </div>
+    <div class="qa-result" id="qaResult"></div>
+    <p class="qa-disclaimer">※ 本工具基于规则库关键词匹配，给出初步合规判断，仅供参考，<b>不构成法律意见</b>。规则库以官方来源为准，实际决策请核实原文并咨询日本社会保険労務士。</p>
+  </div>`;
+}
+
+function qaExtractNum(q){
+  const m = q.match(/(\d+(?:\.\d+)?)/);
+  return m ? parseFloat(m[1]) : null;
+}
+
+function qaAsk(q){
+  q = (q||"").trim();
+  if(!q){ document.getElementById("qaResult").innerHTML = ""; return; }
+  const num = qaExtractNum(q);
+  const rules = COMPLIANCE_RULES.filter(r=>r.country===qaState.country);
+
+  // 评分：strong 命中 3 分，weak 命中 1 分
+  const scored = rules.map(r=>{
+    let score = 0, strongHit = false;
+    for(const kw of (r.strong||[])){
+      if(q.toLowerCase().includes(kw.toLowerCase())){ score += 3; strongHit = true; }
+    }
+    for(const kw of (r.weak||[])){
+      if(q.toLowerCase().includes(kw.toLowerCase())){ score += 1; }
+    }
+    return {r, score, strongHit};
+  });
+
+  // 只有「强命中」的才算真匹配；纯 weak 命中不硬凑
+  const strongHits = scored.filter(h=>h.strongHit).sort((a,b)=>b.score-a.score);
+
+  if(strongHits.length===0){
+    document.getElementById("qaResult").innerHTML = `<div class="qa-empty">未匹配到相关规则。当前日本规则库覆盖：外籍雇佣签证、EOR名义雇主、合同期限、试用期、工时、加班、最低工资、年假、病假、解雇、退职金、休息。你的问题可能涉及规则库<b>未覆盖</b>的主题（如劳务派遣细节、双重雇主、行业特殊许可等），请换一种说法，或咨询日本社会保険労務士。</div>`;
+    return;
+  }
+
+  const hits = strongHits.slice(0,3);
+  document.getElementById("qaResult").innerHTML = hits.map(h=>{
+    const r = h.r;
+    let verdictHtml = "";
+    let answer = r.answer;
+    if(typeof r.verdict === "function"){
+      const v = r.verdict(num);
+      if(v){
+        const label = {ok:"合规 ✅", over:"超限 ⚠️", under:"低于标准 ⚠️", review:"需审批/待核查 🔍", ref:"参考 📄"}[v.status];
+        const cls = v.status;
+        verdictHtml = `<span class="qa-verdict ${cls}">${label}</span>`;
+        answer += ` <b>判定：${v.note}</b>`;
+      }
+    }
+    const srcHtml = r.source ? `<div class="qa-src"><a href="${r.source}" target="_blank" rel="noopener">${r.sourceLabel || "查看官方来源"} ↗</a></div>` : "";
+    return `<div class="qa-card">
+      <div class="qa-card-top"><span class="qa-topic">${r.topic}</span>${verdictHtml}</div>
+      <div class="qa-answer">${answer}</div>
+      <div class="qa-basis">依据：${r.basis}</div>
+      ${srcHtml}
+    </div>`;
+  }).join("");
+}
+
 function goDetail(key){
   const c = DATA[key];
   document.getElementById("detailStamp").textContent = c.code;
@@ -5847,7 +6294,12 @@ function goDetail(key){
   document.getElementById("detailSub").textContent = `${c.region} · 更新于 ${c.updated}`;
   document.getElementById("detailOverview").textContent = c.overview;
 
-  const CALC_SECTION = { jp:"jpCalcSection", vn:"vnCalcSection", my:"myCalcSection", th:"thCalcSection", id:"idCalcSection", sg:"sgCalcSection", kr:"krCalcSection", ae:"aeCalcSection", mx:"mxCalcSection", sa:"saCalcSection", br:"brCalcSection", us:"usCalcSection", de:"deCalcSection", fr:"frCalcSection", in:"inCalcSection", uz:"uzCalcSection", kz:"kzCalcSection", qa:"qaCalcSection", om:"omCalcSection", ng:"ngCalcSection", ph:"phCalcSection", za:"zaCalcSection", hu:"huCalcSection", ca:"caCalcSection" };
+  qaState.country = key;
+  qaRender();
+  const qr = document.getElementById("qaResult");
+  if(qr) qr.innerHTML = "";
+
+  const CALC_SECTION = { jp:"jpCalcSection", vn:"vnCalcSection", my:"myCalcSection", th:"thCalcSection", id:"idCalcSection", sg:"sgCalcSection", kr:"krCalcSection", ae:"aeCalcSection", mx:"mxCalcSection", sa:"saCalcSection", br:"brCalcSection", us:"usCalcSection", de:"deCalcSection", fr:"frCalcSection", in:"inCalcSection", uz:"uzCalcSection", kz:"kzCalcSection", qa:"qaCalcSection", om:"omCalcSection", ng:"ngCalcSection", ph:"phCalcSection", za:"zaCalcSection", hu:"huCalcSection", ca:"caCalcSection", ao:"aoCalcSection" };
   const calcChip = CALC_SECTION[key]
     ? `<div class="chip" tabindex="0" role="button" style="background:var(--accent);color:#fff;border-color:var(--accent)" onclick="document.getElementById('${CALC_SECTION[key]}')?.scrollIntoView({behavior:'smooth',block:'start'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('${CALC_SECTION[key]}')?.scrollIntoView({behavior:'smooth',block:'start'})}">用工成本测算</div>`
     : "";
@@ -5869,8 +6321,8 @@ function goDetail(key){
 }).join("");
 
   const calcEl = document.getElementById("calcSection");
-  const CALC_RENDER = { jp:jpCalcRender, vn:vnCalcRender, my:myCalcRender, th:thCalcRender, id:idCalcRender, sg:sgCalcRender, kr:krCalcRender, ae:aeCalcRender, mx:mxCalcRender, sa:saCalcRender, br:brCalcRender, us:usCalcRender, de:deCalcRender, fr:frCalcRender, in:inCalcRender, uz:uzCalcRender, kz:kzCalcRender, qa:qaCalcRender, om:omCalcRender, ng:ngCalcRender, ph:phCalcRender, za:zaCalcRender, hu:huCalcRender, ca:caCalcRender };
-  const CALC_INIT = { jp:jpCalcInit, vn:vnCalcInit, my:myCalcInit, th:thCalcInit, id:idCalcInit, sg:sgCalcInit, kr:krCalcInit, ae:aeCalcInit, mx:mxCalcInit, sa:saCalcInit, br:brCalcInit, us:usCalcInit, de:deCalcInit, fr:frCalcInit, in:inCalcInit, uz:uzCalcInit, kz:kzCalcInit, qa:qaCalcInit, om:omCalcInit, ng:ngCalcInit, ph:phCalcInit, za:zaCalcInit, hu:huCalcInit, ca:caCalcInit };
+  const CALC_RENDER = { jp:jpCalcRender, vn:vnCalcRender, my:myCalcRender, th:thCalcRender, id:idCalcRender, sg:sgCalcRender, kr:krCalcRender, ae:aeCalcRender, mx:mxCalcRender, sa:saCalcRender, br:brCalcRender, us:usCalcRender, de:deCalcRender, fr:frCalcRender, in:inCalcRender, uz:uzCalcRender, kz:kzCalcRender, qa:qaCalcRender, om:omCalcRender, ng:ngCalcRender, ph:phCalcRender, za:zaCalcRender, hu:huCalcRender, ca:caCalcRender, ao:aoCalcRender };
+  const CALC_INIT = { jp:jpCalcInit, vn:vnCalcInit, my:myCalcInit, th:thCalcInit, id:idCalcInit, sg:sgCalcInit, kr:krCalcInit, ae:aeCalcInit, mx:mxCalcInit, sa:saCalcInit, br:brCalcInit, us:usCalcInit, de:deCalcInit, fr:frCalcInit, in:inCalcInit, uz:uzCalcInit, kz:kzCalcInit, qa:qaCalcInit, om:omCalcInit, ng:ngCalcInit, ph:phCalcInit, za:zaCalcInit, hu:huCalcInit, ca:caCalcInit, ao:aoCalcInit };
   if(CALC_RENDER[key]){
     calcEl.innerHTML = CALC_RENDER[key]();
     calcEl.style.display = "";

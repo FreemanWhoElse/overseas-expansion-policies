@@ -911,7 +911,7 @@ const DATA = {
   },
   sg: {
     name:"新加坡", flag:"🇸🇬", code:"SG", region:"东南亚",
-    updated:"2026-07-07 已核实官方来源", tagline:"区域总部首选地，法规体系透明，MOM官网信息公开程度高",
+    updated:"2026-10-13 已核实官方来源", tagline:"2024/12起灵活工作安排(FWA)请求指引生效，2026/7/1退休年龄升至64岁，EP/S Pass门槛2027/1/1再次上调",
     overview:"新加坡劳动关系的核心法律依据是《雇佣法》(Employment Act 1968)，由人力部（Ministry of Manpower, MOM）执行；另有《中央公积金法》《工作场所安全与卫生法》《工会法》《劳资关系法》《退休与重新雇佣法》等配套法律。以下条目均附MOM/CPF局/IRAS官网原文链接，核实于2026年7月。",
     categories:{
       marketentry:{title:"市场准入与外资审查", items:[
@@ -940,6 +940,10 @@ const DATA = {
       probation:{title:"试用期", items:[
         {text:"《雇佣法》未强制规定试用期时长，MOM官方指引未设统一期限，实务中企业通常自行约定3-6个月并写入劳动合同。", source:"https://singapore.acclime.com/guides/employment-law/", sourceLabel:"参考资料（非官方，MOM未就此单独立法）"}
       ]},
+      fwa:{title:"灵活工作安排请求（FWA）", items:[
+        {text:"《灵活工作安排请求三方指引》(Tripartite Guidelines on Flexible Work Arrangement Requests)自2024年12月1日生效，覆盖《雇佣法》下所有员工（含经理与行政人员），完成试用期后可申请。涵盖三类：弹性工时(Flexi-time)、弹性地点/远程(Flexi-place)、调整工时与工作量(Flexi-load)。", source:"https://www.mom.gov.sg/employment-practices/flexible-work-arrangements/tripartite-guidelines", sourceLabel:"MOM 官网 · Tripartite Guidelines on FWA Requests"},
+        {text:"雇主须在收到员工正式书面FWA请求后2个月内正式回应，可接受或拒绝；拒绝或部分接受须以书面形式给出合理商业理由（如成本、生产运营影响等），否则员工可向劳资纠纷调解联盟(TADM)申诉。", source:"https://www.mom.gov.sg/-/media/mom/documents/employment-practices/guidelines/tripartite-guidelines-on-fwa-requests.pdf", sourceLabel:"MOM 官网 · FWA指引全文(PDF)"}
+      ]},
       workinghours:{title:"工作时间", items:[
         {text:"每周工作5天或以下：合同工时上限为每日9小时或每周44小时；每周工作超过5天：合同工时上限为每日8小时或每周44小时。", source:"https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days", sourceLabel:"MOM 官网 · Hours of work, overtime and rest day"},
         {text:"员工连续工作不应超过6小时无休息；若工作性质需连续工作达8小时，须安排至少45分钟用餐休息。", source:"https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days", sourceLabel:"MOM 官网 · Hours of work, overtime and rest day"},
@@ -952,7 +956,7 @@ const DATA = {
         {text:"休息日加班：应雇主要求工作半天以内支付1天工资，超过半天支付2天工资，超出正常工时部分另加计加班费。", source:"https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days", sourceLabel:"MOM 官网 · Hours of work, overtime and rest day"}
       ]},
       wage:{title:"工资标准", items:[
-        {text:"新加坡目前无全国统一最低工资制度；自2023年起分阶段实施\"渐进式薪金模型\"(Progressive Wage Model, PWM)，对清洁、保安、餐饮、零售等特定行业设定最低薪金及涨幅要求。", source:"https://www.mom.gov.sg/employment-practices/progressive-wage-model", sourceLabel:"MOM 官网 · Progressive Wage Model"},
+        {text:"新加坡目前无全国统一最低工资制度；渐进式薪金模型(Progressive Wage Model, PWM)覆盖清洁、保安、景观、电梯与电扶梯、零售、餐饮、垃圾管理及行政/司机等8类行业，逐年设定最低薪金阶梯。2026年各行业起薪水平：清洁工≥S$1,910/月、保安员≥S$3,170/月、零售助理≥S$2,435/月、餐饮快服类≥S$2,220/月，并逐年上调。", source:"https://www.mom.gov.sg/employment-practices/progressive-wage-model", sourceLabel:"MOM 官网 · Progressive Wage Model（含各行业薪金阶梯）"},
         {text:"工资须至少每月支付一次，在工资结算周期结束后7天内发放；每月须提供列明工资构成的详细工资单（Itemised Payslip）。", source:"https://singaporeemploymentagency.com/understanding-singapores-employment-act-key-rights-and-obligations-for-employers-and-employees/", sourceLabel:"参考资料（非官方，援引Employment Act第20-21条口径）"}
       ]},
       bonus:{title:"奖金标准", items:[
@@ -993,11 +997,12 @@ const DATA = {
       ]},
       cpf:{title:"中央公积金（CPF）与社会保障", items:[
         {text:"CPF仅适用于新加坡公民与永久居民（PR），外籍工作准证持有者（EP/S Pass/Work Permit）不缴纳CPF。", source:"https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay", sourceLabel:"CPF局官网 · How much CPF contributions to pay"},
-        {text:"自2026年1月1日起，55岁及以下员工CPF总缴费率为月工资的37%（雇主17% + 雇员20%），普通工资(OW)缴费上限为每月8,000新元，年度缴费上限（含额外工资）为102,000新元。55岁以上员工缴费比例随年龄阶梯递减。", source:"https://www.cpf.gov.sg/content/dam/web/employer/employer-obligations/documents/CPFcontributionratesfrom1Jan2026.pdf", sourceLabel:"CPF局官网 · CPF Contribution Rate Table (2026)"}
+        {text:"自2026年1月1日起，55岁及以下员工CPF总缴费率为月工资的37%（雇主17% + 雇员20%），普通工资(OW)缴费上限为每月8,000新元，年度缴费上限（含额外工资）为102,000新元。55岁以上员工缴费比例随年龄阶梯递减。", source:"https://www.cpf.gov.sg/content/dam/web/employer/employer-obligations/documents/CPFcontributionratesfrom1Jan2026.pdf", sourceLabel:"CPF局官网 · CPF Contribution Rate Table (2026)"},
+        {text:"CPF局2026年5月21日公告：自2027年1月1日起将上调55岁以上各年龄段员工的CPF缴费率（雇主与雇员侧均提高），以增强高龄员工退休保障；55岁及以下员工费率维持37%不变。", source:"https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay", sourceLabel:"CPF局官网 · 雇主缴费义务（含2027年调整公告）"}
       ]},
       workpass:{title:"外籍用工与工作准证", items:[
-        {text:"就业准证（Employment Pass, EP）：面向专业人士/经理/行政人员，2026年最低固定月薪5,600新元（金融行业6,200新元起），并须通过COMPASS评分系统（薪资、学历、员工多元化、本地人才支持等维度）达到40分方可获批。", source:"https://www.mom.gov.sg/passes-and-permits/employment-pass", sourceLabel:"MOM 官网 · Employment Pass"},
-        {text:"S准证（S Pass）：面向中等技能人才，2026年最低月薪按年龄分档，23岁及以下为3,300新元起（金融行业3,800新元起），随年龄递增至45岁以上4,800新元（金融行业5,650新元）；企业适用行业配额与月度税项(levy)。", source:"https://www.mom.gov.sg/passes-and-permits/s-pass/eligibility", sourceLabel:"MOM 官网 · Eligibility for S Pass"},
+        {text:"就业准证（Employment Pass, EP）：面向专业人士/经理/行政人员，2026年最低固定月薪5,600新元（金融行业6,200新元起），并须通过COMPASS评分系统（薪资、学历、员工多元化、本地人才支持等维度）达到40分方可获批。MOM已官宣自2027年1月1日起门槛再次上调：非金融业23岁起6,000新元（45岁以上11,500新元）、金融业23岁起6,600新元（45岁以上12,700新元）。", source:"https://www.mom.gov.sg/passes-and-permits/employment-pass/eligibility", sourceLabel:"MOM 官网 · Employment Pass eligibility（含2027年新阶梯）"},
+        {text:"S准证（S Pass）：面向中等技能人才，2026年最低月薪按年龄分档，23岁及以下为3,300新元起（金融行业3,800新元起），随年龄递增至45岁以上4,800新元（金融行业5,650新元）；企业适用行业配额(DRC)与月度劳工税(levy)。MOM已官宣自2027年1月1日起门槛上调：非金融业23岁起3,600新元（45岁以上5,100新元）、金融业23岁起4,000新元。", source:"https://www.mom.gov.sg/passes-and-permits/s-pass/eligibility", sourceLabel:"MOM 官网 · Eligibility for S Pass（含2027年新阶梯）"},
         {text:"工作准证（Work Permit）：面向建筑、海事、制造、加工、服务业等特定行业的半技术/体力劳动者，无固定最低月薪要求，但企业须缴纳外劳税(levy)并遵守行业配额上限。", source:"https://www.mom.gov.sg/passes-and-permits", sourceLabel:"MOM 官网 · Work passes"}
       ]},
       wsh:{title:"工作场所安全与工伤", items:[
@@ -2501,6 +2506,7 @@ const CATEGORY_ORDER = [
   ["probation","试用期"],
   ["termination","解雇标准"],
   ["severance","补偿金标准"],
+  ["fwa","灵活工作安排请求"],
   ["workinghours","工作时间"],
   ["overtime","加班标准"],
   ["wage","工资标准"],
@@ -2510,6 +2516,7 @@ const CATEGORY_ORDER = [
   ["leavematernity","产假"],
   ["leavepaternity","陪产假"],
   ["leaveparental","育儿假"],
+  ["leavechildcare","育儿假"],
   ["leavefmla","家庭与医疗假"],
   ["publicholiday","法定假日"],
   ["tax","税率"],

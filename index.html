@@ -2148,6 +2148,10 @@ const DATA = {
         {text:"雇佣合同分固定期限、项目制与无固定期限（常规雇佣默认无固定期限，试用期最长6个月）；固定期限须有合法理由（特定项目、季节性、固定期限任务），不得规避常规雇佣保障。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 雇佣合同与试用期条款"},
         {text:"试用期最长6个月（自入职起算，可延但不得超过该上限）；试用期内可依绩效标准终止，未通过试用须在期满前评估并告知员工。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 试用期条款"}
       ]},
+      probation:{title:"试用期", items:[
+        {text:"《劳动法典》规定试用期上限6个月（劳动法第281条，原Art.281／现Labour Code第296条），仅适用于从雇佣之日起算的服务约定；超过6个月的试用期约定无效，员工将被视为已通过试用期转为常规员工。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 试用期条款(第296条)"},
+        {text:"试用期内解雇仍须遵循\"正当理由+正当程序\"双重标准：雇主须依据入职时明示的合理绩效标准评估，并以书面形式告知员工未通过理由；未经评估或未告知即终止，可被认定为非法解雇。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 试用期解雇正当程序"}
+      ]},
       employment:{title:"用工方式", items:[
         {text:"直接雇佣为主流；外籍员工须持有效AEP与9(g)签证方可工作。常规雇佣默认无固定期限，固定期限与项目制须有合法理由；劳务派遣由依法注册的劳务承包机构办理，须区分合法承包与\"labor-only\"非法承包。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 用工与劳务承包条款"}
       ]},
@@ -2155,8 +2159,17 @@ const DATA = {
         {text:"最低工资按地区由三方工资委员会确定：国家首都区（NCR）非农行业自2026年7月25日起由₱695/日上调至₱755/日，2027年1月20日再涨至₱780/日（农业/服务/零售15人以下企业相应为₱718/日→₱743/日）；其他地区较低（如中吕宋₱435-550/日）。", source:"https://nwpc.dole.gov.ph/ncr", sourceLabel:"菲律宾国家工资与生产力委员会(NWPC/DOLE)官网 · NCR工资令NCR-27"},
         {text:"法定第13薪（13th Month Pay）强制：每年12月24日前支付，等于全年基本工资的1/12；第13薪及福利的首₱90,000免税。最低工资收入者其基本最低工资、加班费、夜班津贴、危险津贴等免税。", source:"https://lawphil.net/statutes/presdecs/pd1975/pd_851_1975.html", sourceLabel:"菲律宾官方公报(PD 851第13薪法)官网 · 第13薪规定"}
       ]},
+      bonus:{title:"奖金标准", items:[
+        {text:"《第13薪法》（PD 851）强制所有雇主向任职满1年的雇员发放第13薪（无论用工形式），金额为全年基本工资的1/12，须于每年12月24日前支付；基本工资不含津贴、加班费、夜班差及非经常性奖金。适用门槛为雇员年薪不超过₱1,000以内者（现实务中几乎全员适用）。", source:"https://lawphil.net/statutes/presdecs/pd1975/pd_851_1975.html", sourceLabel:"菲律宾官方公报(PD 851第13薪法)官网 · 第13薪适用与计算"},
+        {text:"第13薪及福利首₱90,000免税（2022年起经《税收协调法》提高，原为₱82,000）；最低工资收入者的基本最低工资、加班费、夜班津贴、危险津贴等均免征个税。法律未强制第14薪，但部分行业（如银行业、BPO）经集体谈判协议（CBA）约定发放第14薪或绩效奖金，属企业自主。", source:"https://lawphil.net/statutes/repacts/ra1997/ra_8424_1997.html", sourceLabel:"菲律宾官方公报(RA 8424税改法NIRC)官网 · 第13薪免税条款"}
+      ]},
       workinghours:{title:"工作时间", items:[
         {text:"标准工时每日8小时，超过8小时部分支付加班费（普通日125%、休息日/法定假日更高倍率）；夜班（22:00-6:00）加发10%夜班津贴；休息日工作付130%。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 工时与加班条款"}
+      ]},
+      overtime:{title:"加班标准", items:[
+        {text:"加班费倍率（劳动法典第87条）：普通工作日加班按小时工资125%；休息日（rest day）工作前8小时130%、超过8小时部分169%；休息日加班且为夜班另叠加10%夜班津贴。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 加班与休息日条款(第87-88条)"},
+        {text:"法定假日（regular holiday）工作倍率（第93条）：前8小时200%；超过8小时部分260%；法定假日恰逢休息日且工作的，前8小时260%、超过8小时338%。特殊非工作日（special non-working day）工作原则上130%。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 假日工资条款(第93条)"},
+        {text:"夜班津贴（night shift differential，第86条）：22:00至次日6:00工作加发每小时工资10%，适用于除政府雇员、5人以下零售/服务业、家庭佣工外的劳动者；与加班、假日倍率可叠加计算。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 夜班津贴条款(第86条)"}
       ]},
       leaveannual:{title:"年假", items:[
         {text:"《劳动法》未强制年假，服务满1年员工可依法获得每年5天\"服务激励假\"（Service Incentive Leave，可用作病假或年假）；多数企业合同另约定10-15天带薪年假。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 服务激励假条款"}
@@ -2170,6 +2183,14 @@ const DATA = {
       leavepaternity:{title:"陪产假", items:[
         {text:"已婚男性员工享有7天带薪陪产假（RA 8187），须为与配偶合法结婚且配偶分娩或流产，请假限于前4次分娩；另有每名父母每年额外7天\"父母假\"（单亲父母福利）。", source:"https://lawphil.net/statutes/repacts/ra1996/ra_8187_1996.html", sourceLabel:"菲律宾官方公报(RA 8187陪产假法)官网 · 7天陪产假"}
       ]},
+      leaveparental:{title:"育儿假/单亲父母假", items:[
+        {text:"菲律宾无独立的法定带薪\"育儿假\"（区别于产假/陪产假）；《Solo Parents Welfare Act》（RA 8972）规定单亲父母每年享有7天带薪父母假（parental leave），适用于年总收入在一定门槛以下、独力抚养子女的单亲员工，须持当地社会工作者颁发的单亲父母身份证。", source:"https://lawphil.net/statutes/repacts/ra2000/ra_8972_2000.html", sourceLabel:"菲律宾官方公报(RA 8972单亲父母福利法)官网 · 单亲父母7天带薪假"},
+        {text:"RA 8972 另赋予单亲父母在晋升、招聘中不受歧视的保护，及优先享有关键民生项目福利；该7天假不可累计、不可折现。常规双亲家庭无法定带薪育儿假，部分企业经CBA或内部政策自行提供。", source:"https://lawphil.net/statutes/repacts/ra2000/ra_8972_2000.html", sourceLabel:"菲律宾官方公报(RA 8972单亲父母福利法)官网 · 单亲父母就业保护"}
+      ]},
+      publicholiday:{title:"法定假日", items:[
+        {text:"菲律宾法定假日分两类：常规假日（Regular Holidays，共12天，含元旦、濯足节、耶稣受难日、勇气日、劳动节、独立日、国家英雄日、博尼法西奥日、圣诞节、黎刹日及开斋节、宰牲节）与特殊非工作日（Special Non-Working Holidays，含尼诺伊·阿基诺日、万圣节、除夕等）；具体日期每年由总统公告（Proclamation）确定。", source:"https://www.officialgazette.gov.ph", sourceLabel:"菲律宾官方公报(Official Gazette)官网 · 年度假日公告"},
+        {text:"假日工资倍率：常规假日未工作仍付100%日薪；工作前8小时200%、超8小时260%；恰逢休息日工作前8小时260%、超8小时338%。特殊非工作日未工作不计薪，工作按130%。具体年度日期与\"holiday economics\"调休以总统公告为准（待核实每年最新公告）。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 假日工资条款(第93-94条)"}
+      ]},
       termination:{title:"解雇标准", items:[
         {text:"解雇须基于\"正当理由\"（严重失当、欺诈、严重不服从等，须经正当程序：书面指控→答辩机会→裁决）或\"授权理由\"（冗余、裁员、合并、经营收缩等，须提前30天通知DOLE并支付遣散费）。未经正当程序解雇可被判定非法，雇主须复职或赔偿。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 解雇与正当程序条款"}
       ]},
@@ -2179,6 +2200,23 @@ const DATA = {
       socialinsurance:{title:"社保", items:[
         {text:"SSS（社会保障）：费率15%（雇主10%+雇员5%），以月度薪资信用额（MSC，₱5,000-₱35,000）为基数；另有雇员补偿（EC）由雇主缴纳（₱10-30/月）。PhilHealth健康保险：5%（雇主2.5%+雇员2.5%），基数₱10,000-₱100,000；Pag-IBIG住房基金：2%+2%（封顶₱200+₱200）。", source:"https://www.sss.gov.ph/news-and-updates/sss-clarifies-1-contribution-rate-hike-bares-plans-for-2025", sourceLabel:"菲律宾社会保障系统(SSS)官网 · 2025年缴费率公告"},
         {text:"2025年起SSS总费率15%正式生效，MSC上限由₱30,000上调至₱35,000；PhilHealth缴费基数下限₱10,000（低于此按₱10,000计），上限₱100,000封顶。", source:"https://www.sss.gov.ph/news-and-updates/sss-clarifies-1-contribution-rate-hike-bares-plans-for-2025", sourceLabel:"菲律宾社会保障系统(SSS)官网 · 2025年缴费率上调公告"}
+      ]},
+      wsh:{title:"工作场所安全与卫生", items:[
+        {text:"《职业安全与健康法》（RA 11058，2018年生效）要求所有行业雇主提供安全卫生的工作场所，须无偿提供个人防护装备（PPE）与培训、指定安全官（Safety Officer SO1-SO5）、设立职业安全卫生委员会；由DOLE下属职业安全与健康中心（OSHC）负责标准制定、培训与事故调查。", source:"https://lawphil.net/statutes/repacts/ra2018/ra_11058_2018.html", sourceLabel:"菲律宾官方公报(RA 11058职业安全健康法)官网 · 雇主义务与安全官"},
+        {text:"工伤、职业病或死亡由SSS雇员补偿计划（Employees' Compensation Program, ECP）承担，保费由雇主单独缴纳（非从雇员工资扣除）；因违反OSH标准导致伤亡的，雇主另须承担全额医疗、康复费用并面临罚款与刑责（罚款金额以现行实施细则为准，待核实）。", source:"https://www.sss.gov.ph", sourceLabel:"菲律宾社会保障系统(SSS)官网 · 雇员补偿ECP"}
+      ]},
+      unions:{title:"工会与集体协商", items:[
+        {text:"《劳动法典》第五卷（Book V）保障雇员组织工会、集体谈判与罢工的权利；组建工会须在DOLE登记，企业内工会须取得谈判单位内雇员过半数授权方可作为独家谈判代表。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 工会与集体谈判(第五卷)"},
+        {text:"集体谈判协议（CBA）有效期最长5年，期满须重新谈判；雇主无正当理由拒绝集体谈判、对工会会员歧视对待或干涉工会组织，构成\"不当劳动行为\"（ULP），可向DOLE申诉。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 不当劳动行为条款"}
+      ]},
+      retirement:{title:"退休制度", items:[
+        {text:"菲律宾无强制退休年龄统一规定，实务中企业多在合同或员工手册约定60岁（可选退休）至65岁（强制退休上限）；《劳动法典》第287条（现第298条）承认雇主可设定退休年龄，达到约定年龄退休的雇员享有退休金。", source:"https://lawphil.net/statutes/presdecs/pd1974/pd_442_1974.html", sourceLabel:"菲律宾官方公报(劳动法典PD 442)官网 · 退休条款(第298条)"},
+        {text:"《退休金法》（RA 7641）要求无自有退休计划的雇主，向服务满5年且达60岁（或约定退休年龄）的雇员支付退休金，标准为每满1年服务支付22.5天基本工资；该法定退休金为最低保障，企业既有退休计划更优则适用更优方案。", source:"https://lawphil.net/statutes/repacts/ra1992/ra_7641_1992.html", sourceLabel:"菲律宾官方公报(RA 7641退休金法)官网 · 法定退休金"},
+        {text:"SSS退休养老金领取条件：缴费满120个月且年满60岁（可降额领取）或65岁（无论是否在职）；养老金为按月发放的终身年金，金额依缴费年限与薪资信用额计算。", source:"https://www.sss.gov.ph", sourceLabel:"菲律宾社会保障系统(SSS)官网 · 退休养老金领取条件"}
+      ]},
+      disputes:{title:"劳动争议处理", items:[
+        {text:"劳动争议由国家劳资关系委员会（NLRC）及其仲裁员（Labor Arbiter）管辖：雇员可向NLRC提起申诉，由仲裁员在30天内进行强制调解，调解不成则在仲裁听证后裁决；对裁决不服可向NLRC委员会上诉，终审可至最高法院。", source:"https://www.nlrc.dole.gov.ph", sourceLabel:"菲律宾国家劳资关系委员会(NLRC)官网 · 仲裁与裁决流程"},
+        {text:"劳资争议（罢工、停工、集体谈判僵局）由国家调解与调停委员会（NCMB）负责调解与调停；工会须在罢工前取得过半数会员秘密投票同意并提前7天通知，否则罢工可能被认定非法。", source:"https://www.ncmb.dole.gov.ph", sourceLabel:"菲律宾国家调解调停委员会(NCMB)官网 · 劳资争议调解与罢工程序"}
       ]},
       tax:{title:"税率", items:[
         {text:"个税累进0%-35%（年应税收入≤₱250,000免税）；企业按25%缴CIT（小型20%、RBE 20%/5%）；员工薪资成本含SSS 10%+PhilHealth 2.5%+Pag-IBIG 2%雇主缴费及第13薪，无统一法定离职金。", source:"https://www.forvismazars.com/ph/en/insights/tax-alerts/bir-revenue-memorandum-circular-no.-69-2023", sourceLabel:"Forvis Mazars（非官方，援引BIR官方通函RMC 69-2023） · 企业所得税与MCIT税率"}

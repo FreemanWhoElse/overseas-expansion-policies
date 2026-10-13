@@ -1357,9 +1357,19 @@ const DATA = {
   },
  sa: {
     name:"沙特阿拉伯", flag:"🇸🇦", code:"SA", region:"中东",
-    updated:"2026-07-08 已核实官方来源", tagline:"2025年2月劳动法迎来近十年最大改革，试用期延长至180天、GOSI养老金费率同步上调",
+    updated:"2026-10-13 已核实官方来源", tagline:"2026年Nitaqat Mawzun新周期实施、多行业沙特化配额上调；新社保法退休年龄渐进至65岁，VAT 15%不变",
     overview:"沙特劳动关系的核心法律依据是《劳动法》(Royal Decree No. M/51, 2005年颁布)，由人力资源与社会发展部(HRSD)执行；2025年2月19日生效的重大修正案是自2015年以来最大幅度的改革，社会保险由社会保险总局(GOSI)管理，税务由税务及关税总局(ZATCA)管理。以下条目均附HRSD、GOSI官网及权威税务资料来源链接，核实于2026年7月。",
     categories:{
+      marketentry:{title:"市场准入与外资审查", items:[
+        {text:"新《投资法》（皇家法令M/19，2024年8月11日公布）自2025年2月生效，将外资准入由\"许可证制\"改为MISA统一\"登记制\"，负面清单外活动登记即可经营，取消逐项外资牌照，确立内外资同等待遇与资金自由汇出原则，沙特投资部（MISA，原SAGIA）为唯一注册机构。", source:"https://www.misa.gov.sa", sourceLabel:"沙特投资部(MISA)官网 · 新投资法"},
+        {text:"外资负面清单（禁止/限制领域）包括：石油勘探开采生产（部分CPC除外）、军事装备制造、民用爆炸物、军供餐饮、安保与侦探业、朝觐与副朝旅游、人力资源与招聘服务、佣金代理及海洋生物捕捞等；清单外行业原则上向外资开放。", source:"https://www.jetro.go.jp/world/middle_east/sa/invest_02.html", sourceLabel:"JETRO（非官方）· 援引MISA负面清单口径"},
+        {text:"外资持股上限：多数行业允许100%持股；商业（批发/零售/贸易）上限75%，独资须注册资本≥3,000万里亚尔；电信业外资上限60%；工程咨询、法律、房地产金融等领域可100%持股但须满足附加条件（如跨国经营年限、业绩、主管部门批文）。", source:"https://www.jetro.go.jp/world/middle_east/sa/invest_02.html", sourceLabel:"JETRO（非官方）· 援引MISA持股口径"}
+      ]},
+      consumptiontax:{title:"税收全景（消费税及其他）", items:[
+        {text:"增值税(VAT)标准税率15%，自2020年7月1日起由5%上调，适用于绝大多数货物与服务；沙特不征收个人所得税（工资薪金免税）；出口及部分国际运输服务适用零税率，教育、医疗等特定服务免征。", source:"https://zatca.gov.sa/", sourceLabel:"税务及关税总局(ZATCA)官网 · 增值税"},
+        {text:"向非居民支付预提税(WHT)：管理费20%（最高档）；特许权使用费、一般服务费、境内运输15%；利息、股息、租金、技术服务及保险费5%（技术服务税率自2023年9月15日起由15%降至5%）；税率可依税收协定进一步降低。", source:"https://taxsummaries.pwc.com/saudi-arabia/corporate/withholding-taxes", sourceLabel:"普华永道(PwC)全球税务摘要（非官方）· 援引ZATCA预提税口径"},
+        {text:"消费税(Excise Tax)自2017年6月11日起征收：烟草制品100%、能量饮料100%、碳酸（软）饮料50%；征税环节为生产或进口，由ZATCA征管。另，企业所得税标准20%、沙特/GCC股东按净资产缴2.5%天课税(Zakat)，油气生产适用50%-85%特殊税率。", source:"https://taxsummaries.pwc.com/saudi-arabia/corporate/other-taxes", sourceLabel:"普华永道(PwC)全球税务摘要（非官方）· 援引ZATCA消费税与企业税口径"}
+      ]},
       companysetup:{title:"公司设立", items:[
         {text:"新《投资法》（皇家法令M/19，2024年8月11日公布）于2025年2月生效，取代2000年外资法：外资许可制改为统一投资注册制，负面清单外活动注册即获准经营，本地与外国投资者同等对待，外资保护与资金汇出获强化。沙特投资部（MISA，原SAGIA）为唯一注册机构，原逐项外资牌照取消。", source:"https://www.misa.gov.sa", sourceLabel:"沙特投资部MISA · 新投资法"},
         {text:"有限责任公司（LLC）为外资最常用形式，无统一法定最低资本，MISA按行业设门槛：服务/工业类约2.5万—50万里亚尔，100%外资的批发零售贸易类需3,000万里亚尔。另有股份公司（JSC）、简化股份公司（SJSC，2022年公司法引入、无最低资本）及分公司；多数行业允许100%外资，负面清单除外。", source:"https://investsaudi.sa", sourceLabel:"沙特投资门户 · 公司设立指南"},
@@ -1368,7 +1378,7 @@ const DATA = {
       workvisa:{title:"签证与在留资格", items:[
         {text:"沙特实行雇主担保制：外籍员工须由在沙注册公司担保，经Qiwa（HRSD）获批劳动许可、外交部签发工作签证，入境90天内办理Iqama居留许可（1—2年有效）。2025年7月5日起按人力资源部第4602号决议，长期工签分高技能/技能/基础三级，须匹配沙特职业分类（SSCO）。", source:"https://www.hrsd.gov.sa", sourceLabel:"人力资源与社会发展部 · 工作签证"},
         {text:"Premium Residency（高级居留/黄金签证）免雇主担保：永久型一次性支付80万里亚尔（约21.3万美元）享无限期居留，或年付10万里亚尔的年度可续期型；可自由工作、经商、置产，享免外籍费与机场快速通道。通过高级居留中心官网saprc.gov.sa在线申请，完整申请约90天内审批。", source:"https://saprc.gov.sa", sourceLabel:"高级居留中心 · Premium Residency"},
-        {text:"Nitaqat沙特化按颜色分级（铂金/绿/红，2025年取消黄带）约束外籍配额：红带企业冻结新工签、限制Iqama续签与政府合同。2026年多行业提高配额——工程30%、会计40%（2028年升至70%）、采购70%、销售60%，沙特员工最低工资门槛升至4,000里亚尔，直接影响中企外派名额。", source:"https://www.hrsd.gov.sa", sourceLabel:"人力资源与社会发展部 · Nitaqat沙特化"}
+        {text:"Nitaqat沙特化按颜色分级（铂金/绿/红）约束外籍配额：红带企业冻结新工签、限制Iqama续签与政府合同。2026年4月16日起实施新版Nitaqat Mawzun（三年周期至2028年，取消黄档，目标新增逾34万沙特岗位），且自2026年4月15日起沙特员工须在Qiwa平台完成电子合同认证方计入沙特化率。2026年多行业配额——工程30%、会计40%（2028年升至70%）、采购70%、销售60%，沙特员工计入配额的工资门槛为4,000里亚尔/月，直接影响中企外派名额。", source:"https://www.hrsd.gov.sa", sourceLabel:"人力资源与社会发展部 · Nitaqat沙特化"}
       ]},
       contract:{title:"合同类型", items:[
         {text:"定期合同到期自动终止；如双方续签3次，或原合同期+续签期累计满4年（以较短者为准）且双方继续履行，合同将自动转换为不定期合同。", source:"https://www.hrsd.gov.sa/en/%D8%B9%D9%84%D8%A7%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D8%B9%D9%85%D9%84", sourceLabel:"人力资源与社会发展部(HRSD)官网 · 劳动关系专题（2025年修正案条款）"},
@@ -1422,6 +1432,18 @@ const DATA = {
       {text:"沙特劳动法未强制规定年度奖金或第13薪。部分企业（尤其是跨国公司和银行）设有年度绩效奖金，通常为1-3个月基本工资。Leaving Indemnity（离职补偿金）为法定强制支付，按服务期计算，但不属于奖金性质。", source:"https://hrsd.gov.sa/", sourceLabel:"沙特人力资源与社会发展部(Ministry of Human Resources and Social Development)官网"}
       ]},
       publicholiday:{title:"法定假日", items:[{text:"沙特阿拉伯法定公共假日包括：开斋节（Eid al-Fitr，3-4天）、宰牲节（Eid al-Adha，3-4天）、沙特国庆日（9月23日，1天）；伊斯兰历新年、先知诞辰等伊斯兰节日通常也为公共假日；因伊斯兰历与公历的差异，每年假日的公历日期不同；私营部门假日安排由人力资源与社会发展部(HRSD)每年公布。", source:"https://www.hrsd.gov.sa/en", sourceLabel:"人力资源与社会发展部(HRSD)官网 · 年度公共假日公告"}]},
+      wsh:{title:"职业安全与工伤", items:[
+        {text:"《劳动法》（皇家法令M/51）第八章\"防止工作危险及重大工业事故\"第121-129条规定：雇主须在合理可行范围内采取职业安全卫生措施、预防工作危险，并为工人免费提供个人防护装备，保障工作场所安全与健康。", source:"https://www.hrsd.gov.sa/", sourceLabel:"人力资源与社会发展部(HRSD)官网 · 《劳动法》第八章职业安全条款"},
+        {text:"工伤保障由社会保险总局(GOSI)职业危害险(Occupational Hazards Branch)覆盖：费率为缴费工资的2%，全部由雇主承担，强制适用于所有国籍员工（含外籍）；员工因工伤暂时丧失工作能力，前60天按全额工资赔付，其后按75%工资赔付，具体伤残档次以官方鉴定为准。", source:"https://www.gosi.gov.sa/", sourceLabel:"社会保险总局(GOSI)官网 · 职业危害险"}
+      ]},
+      unions:{title:"工会与集体协商", items:[
+        {text:"沙特《劳动法》未承认自由结社的工会权，法律未规定集体谈判程序，亦不承认罢工权（无任何条款支持或保障产业行动）；劳资关系主要通过政府主导的调解与劳动委员会机制处理。", source:"https://www.fedee.com/kb/countries/saudi-arabia/representation-and-bargaining-saudi-arabia/", sourceLabel:"FedEE（非官方）· 沙特劳资代表与协商制度"},
+        {text:"替代机制：雇佣100名及以上工人的企业可设立\"福利委员会\"(Welfare Committees)；仅沙特籍员工可组建\"工人委员会\"(Work Councils)，外籍员工不参与此类组织；实践中集体协商空间有限，员工权益主要依《劳动法》法定标准及HRSD监管保障。", source:"https://wageindicator.org/work-in-saudi-arabia/labour-law/trade-union/", sourceLabel:"WageIndicator（非官方，2026-02更新）· 沙特工会制度"}
+      ]},
+      retirement:{title:"退休制度", items:[
+        {text:"新《社会保险法》（皇家法令M/273，2024年7月3日生效）：新参保者法定退休年龄为65岁，或缴费满30年可于55岁退休；现有50岁以下参保者的退休年龄由58岁逐步提高至65岁，渐进过渡。", source:"https://www.gosi.gov.sa/", sourceLabel:"社会保险总局(GOSI)官网 · 新社会保险法(M/273)"},
+        {text:"养老金费率双轨过渡：2024年7月3日前已参保者维持固定费率（雇主9%+雇员9%）；此后首次参保者费率每年7月各上调0.5个百分点（2026年7月起达雇主10%+雇员10%），至2028年达各11%。", source:"https://scplksa.com/gosi-contributions-saudi-arabia", sourceLabel:"SCPL KSA（非官方）· 援引M/273养老金费率"}
+      ]},
     }
   },
   br: {
